@@ -566,7 +566,6 @@
             opacity: 1;
         }
 
-        /* Admin Sidebar */
         .admin-sidebar {
             width: 280px;
             background: #16181d;
@@ -605,10 +604,7 @@
             color: var(--accent);
         }
 
-        .admin-nav-item i {
-            width: 20px;
-            text-align: center;
-        }
+        .admin-nav-item i { width: 20px; text-align: center; }
 
         .admin-back-btn {
             margin-top: auto;
@@ -625,12 +621,8 @@
             gap: 10px;
             font-weight: 600;
         }
-        .admin-back-btn:hover {
-            background: var(--danger);
-            color: #fff;
-        }
+        .admin-back-btn:hover { background: var(--danger); color: #fff; }
 
-        /* Admin Main Content */
         .admin-main {
             flex: 1;
             padding: 40px;
@@ -638,13 +630,8 @@
             height: 100%;
         }
 
-        .admin-view {
-            display: none;
-            animation: fadeIn 0.4s ease;
-        }
-        .admin-view.active {
-            display: block;
-        }
+        .admin-view { display: none; animation: fadeIn 0.4s ease; }
+        .admin-view.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -666,7 +653,6 @@
             color: var(--white);
         }
 
-        /* Dashboard Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -681,20 +667,9 @@
             text-align: center;
         }
 
-        .stat-card h3 {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
+        .stat-card h3 { font-size: 2.5rem; color: var(--accent); margin-bottom: 10px; }
+        .stat-card p { color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
-        .stat-card p {
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        /* Manage Gallery Grid */
         .admin-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -709,170 +684,60 @@
             position: relative;
         }
 
-        .admin-gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+        .admin-gallery-item img { width: 100%; height: 200px; object-fit: cover; }
 
-        .admin-gallery-info {
-            padding: 15px;
-        }
+        .admin-gallery-info { padding: 15px; }
+        .admin-gallery-info h4 { font-size: 1rem; margin-bottom: 5px; }
+        .admin-gallery-info p { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; }
 
-        .admin-gallery-info h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .admin-gallery-info p {
-            font-size: 0.75rem;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-
-        .admin-item-actions {
-            display: flex;
-            gap: 10px;
-            padding: 0 15px 15px 15px;
-        }
+        .admin-item-actions { display: flex; gap: 10px; padding: 0 15px 15px 15px; }
 
         .action-btn {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            transition: var(--transition);
+            flex: 1; padding: 10px; border: none; border-radius: 4px; cursor: pointer;
+            font-weight: 600; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 5px; transition: var(--transition);
         }
 
-        .action-btn.edit {
-            background: rgba(197, 155, 39, 0.15);
-            color: var(--accent);
-        }
+        .action-btn.edit { background: rgba(197, 155, 39, 0.15); color: var(--accent); }
         .action-btn.edit:hover { background: var(--accent); color: #000; }
 
-        .action-btn.delete {
-            background: rgba(231, 76, 60, 0.15);
-            color: var(--danger);
-        }
+        .action-btn.delete { background: rgba(231, 76, 60, 0.15); color: var(--danger); }
         .action-btn.delete:hover { background: var(--danger); color: #fff; }
 
-        /* Upload / Edit Form */
         .admin-form-container {
-            max-width: 600px;
-            background: #16181d;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
+            max-width: 600px; background: #16181d; padding: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
         .form-control {
-            width: 100%;
-            padding: 15px;
-            background: #0f1115;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--white);
-            border-radius: 6px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            outline: none;
-            transition: var(--transition);
+            width: 100%; padding: 15px; background: #0f1115; border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white); border-radius: 6px; font-family: var(--font-body); font-size: 1rem; outline: none; transition: var(--transition);
         }
+        .form-control:focus { border-color: var(--accent); }
 
-        .form-control:focus {
-            border-color: var(--accent);
-        }
-
-        .file-upload-wrapper {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-upload-wrapper input[type="file"] {
-            font-size: 100px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
+        .file-upload-wrapper { position: relative; overflow: hidden; display: inline-block; width: 100%; }
+        .file-upload-wrapper input[type="file"] { font-size: 100px; position: absolute; left: 0; top: 0; opacity: 0; cursor: pointer; }
         .file-upload-btn {
-            display: block;
-            width: 100%;
-            padding: 30px;
-            background: rgba(197, 155, 39, 0.05);
-            border: 2px dashed rgba(197, 155, 39, 0.3);
-            border-radius: 6px;
-            text-align: center;
-            color: var(--accent);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+            display: block; width: 100%; padding: 30px; background: rgba(197, 155, 39, 0.05); border: 2px dashed rgba(197, 155, 39, 0.3);
+            border-radius: 6px; text-align: center; color: var(--accent); font-weight: 600; cursor: pointer; transition: var(--transition);
         }
+        .file-upload-btn:hover { background: rgba(197, 155, 39, 0.1); border-color: var(--accent); }
 
-        .file-upload-btn:hover {
-            background: rgba(197, 155, 39, 0.1);
-            border-color: var(--accent);
-        }
-
-        .image-preview-box {
-            margin-top: 15px;
-            display: none;
-            text-align: center;
-        }
-
-        .image-preview-box img {
-            max-height: 200px;
-            border-radius: 6px;
-            margin: 0 auto;
-            border: 2px solid var(--accent);
-        }
+        .image-preview-box { margin-top: 15px; display: none; text-align: center; }
+        .image-preview-box img { max-height: 200px; border-radius: 6px; margin: 0 auto; border: 2px solid var(--accent); }
 
         .admin-submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--accent);
-            color: #000;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-top: 20px;
+            width: 100%; padding: 18px; background: var(--accent); color: #000; border: none; border-radius: 6px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: var(--transition); margin-top: 20px;
         }
+        .admin-submit-btn:hover { background: var(--accent-hover); box-shadow: 0 0 20px rgba(197, 155, 39, 0.4); }
 
-        .admin-submit-btn:hover {
-            background: var(--accent-hover);
-            box-shadow: 0 0 20px rgba(197, 155, 39, 0.4);
+        .reset-btn {
+            background: transparent; border: 1px solid var(--danger); color: var(--danger); width: 100%;
+            padding: 12px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: var(--transition); margin-top: 20px;
         }
+        .reset-btn:hover { background: var(--danger); color: #fff; }
 
-        /* =========================================
-           RESPONSIVE DESIGN
-           ========================================= */
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 4rem; }
             .contact-grid { grid-template-columns: 1fr; }
@@ -891,8 +756,6 @@
             .footer-links a { margin: 0 10px; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
             .slide-card { min-width: 280px; height: 400px; }
-            
-            /* Mobile Admin */
             .admin-overlay { flex-direction: column; }
             .admin-sidebar { width: 100%; height: auto; padding: 15px; flex-direction: row; align-items: center; justify-content: space-between; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
             .admin-logo { margin-bottom: 0; font-size: 1.2rem; }
@@ -918,7 +781,6 @@
                 <li><a href="#lookbook" onclick="closeMenu()">Lookbook</a></li>
                 <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                <!-- Admin Quick Access -->
                 <li><a href="#" onclick="openAdmin()" style="color: var(--accent); font-weight: 700;"><i class="fas fa-user-shield"></i> Admin</a></li>
             </ul>
             
@@ -930,9 +792,9 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section id="home" class="hero">
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&v=4');"></div>
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&v=4');"></div>
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&v=4');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&v=5');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&v=5');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&v=5');"></div>
         
         <div class="hero-overlay"></div>
         
@@ -972,30 +834,30 @@
         <div class="container">
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Updated with specifically African Fashion Images -->
+                    <!-- Lookbook images are separate from the Gallery Grid. To change these, edit the HTML directly -->
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=4" alt="Royal Lace Kaftan">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=5" alt="Royal Lace Kaftan">
                         <div class="slide-info">
                             <h3>Royal Lace Kaftan</h3>
                             <p>Bespoke Tailoring</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=4" alt="Ankara Print Elegance">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=5" alt="Ankara Print Elegance">
                         <div class="slide-info">
                             <h3>Ankara Print Elegance</h3>
                             <p>Unisex Collection</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=4" alt="Bespoke Agbada">
+                        <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=5" alt="Bespoke Agbada">
                         <div class="slide-info">
                             <h3>Bespoke Agbada</h3>
                             <p>Limited Edition</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=4" alt="Contemporary Aso Oke">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=5" alt="Contemporary Aso Oke">
                         <div class="slide-info">
                             <h3>Contemporary Aso Oke</h3>
                             <p>Streetwear</p>
@@ -1017,7 +879,7 @@
             <p class="section-subtitle reveal">A curated selection of our finest work</p>
             
             <div class="gallery-grid" id="dynamicGallery">
-                <!-- Gallery items will be dynamically generated by JavaScript -->
+                <!-- Gallery items are dynamically generated by JavaScript based on Admin Dashboard -->
             </div>
         </div>
     </section>
@@ -1105,7 +967,6 @@
                 <div class="footer-links">
                     <a href="#home">Privacy Policy</a>
                     <a href="#home">Terms of Service</a>
-                    <!-- Admin Trigger -->
                     <a href="#" onclick="openAdmin()" style="color: var(--accent); font-weight: 600;"><i class="fas fa-user-shield"></i> Admin Portal</a>
                 </div>
             </div>
@@ -1114,7 +975,6 @@
 
     <!-- ================= FULL ADMIN DASHBOARD OVERLAY ================= -->
     <div class="admin-overlay" id="adminOverlay">
-        <!-- Sidebar -->
         <div class="admin-sidebar">
             <div class="admin-logo">OYELEKAN <span>ADMIN</span></div>
             
@@ -1133,9 +993,7 @@
             </button>
         </div>
 
-        <!-- Main Content Area -->
         <div class="admin-main">
-            
             <!-- View 1: Dashboard Overview -->
             <div class="admin-view active" id="view-dashboard">
                 <div class="admin-header">
@@ -1156,14 +1014,14 @@
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 30px; font-size: 0.9rem;">
-                    <i class="fas fa-info-circle"></i> Welcome to your content management system. Use the sidebar to manage your website's gallery images and captions.
+                    <i class="fas fa-info-circle"></i> Welcome to your content management system. Use the sidebar to manage your website's gallery images and captions. Changes saved here will instantly update the "Gallery Grid" on the homepage.
                 </p>
             </div>
 
             <!-- View 2: Manage Gallery -->
             <div class="admin-view" id="view-gallery">
                 <div class="admin-header">
-                    <h2>Manage Gallery</h2>
+                    <h2>Manage Gallery Grid</h2>
                     <button class="action-btn edit" onclick="showAdminTab('upload')" style="flex: none; padding: 10px 20px;">
                         <i class="fas fa-plus"></i> Add New
                     </button>
@@ -1218,9 +1076,13 @@
                             <i class="fas fa-save"></i> Save Media
                         </button>
                     </form>
+                    
+                    <!-- New Emergency Reset Button -->
+                    <button class="reset-btn" onclick="forceClearStorage()">
+                        <i class="fas fa-exclamation-triangle"></i> Clear Browser Cache & Reset Gallery
+                    </button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -1234,26 +1096,46 @@
         /* =========================================
            DYNAMIC GALLERY DATA & LOCAL STORAGE
            ========================================= */
-        // Using guaranteed African Fashion Images with cache-busting v=4
         const defaultGalleryData = [
-            { id: 1, image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=4', caption: 'Royal Lace Kaftan', category: 'Bespoke Tailoring' },
-            { id: 2, image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=4', caption: 'Ankara Print Elegance', category: 'Unisex Collection' },
-            { id: 3, image: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=4', caption: 'Bespoke Agbada', category: 'Limited Edition' },
-            { id: 4, image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=4', caption: 'Contemporary Aso Oke', category: 'Streetwear' },
-            { id: 5, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop&v=4', caption: 'Elegant Evening Gown', category: 'Bespoke Wears' },
-            { id: 6, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop&v=4', caption: 'Tailored Kaftan Set', category: "Men's Bespoke" }
+            { id: 1, image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=5', caption: 'Royal Lace Kaftan', category: 'Bespoke Tailoring' },
+            { id: 2, image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=5', caption: 'Ankara Print Elegance', category: 'Unisex Collection' },
+            { id: 3, image: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=5', caption: 'Bespoke Agbada', category: 'Limited Edition' },
+            { id: 4, image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=5', caption: 'Contemporary Aso Oke', category: 'Streetwear' },
+            { id: 5, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop&v=5', caption: 'Elegant Evening Gown', category: 'Bespoke Wears' },
+            { id: 6, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop&v=5', caption: 'Tailored Kaftan Set', category: "Men's Bespoke" }
         ];
 
-        // Bumped key to v4 to force new defaults
-        const STORAGE_KEY = 'oyelekanGallery_v4';
-        let galleryData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [...defaultGalleryData];
+        // Bumped key to v5 to force refresh
+        const STORAGE_KEY = 'oyelekanGallery_v5';
+        
+        // Load from localStorage or defaults
+        let galleryData = [];
+        try {
+            const storedData = localStorage.getItem(STORAGE_KEY);
+            galleryData = storedData ? JSON.parse(storedData) : [...defaultGalleryData];
+        } catch (e) {
+            console.error("Local storage is full or corrupted. Loading defaults.");
+            galleryData = [...defaultGalleryData];
+        }
 
         function saveData() {
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(galleryData));
                 updateDashboardStats();
             } catch (e) {
-                alert("Storage limit reached! The images you uploaded are too large for the browser's local storage. Please try smaller images or reset the gallery.");
+                alert("Storage limit reached! The images you uploaded are too large for the browser's local storage. Please try smaller images or use the 'Clear Browser Cache' button.");
+            }
+        }
+
+        function forceClearStorage() {
+            if (confirm("This will clear all custom images you have uploaded and restore the original African attire images. Are you sure?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                galleryData = [...defaultGalleryData];
+                saveData();
+                renderMainGallery();
+                renderAdminGallery();
+                alert("Browser cache cleared and gallery reset to defaults.");
+                showAdminTab('gallery');
             }
         }
 
@@ -1300,23 +1182,18 @@
             document.getElementById('adminOverlay').classList.remove('active');
             document.body.style.overflow = 'auto';
             document.getElementById('whatsappBtn').style.display = 'flex';
-            renderMainGallery(); // Refresh main site gallery on exit
+            renderMainGallery(); // CRITICAL FIX: Refresh the main site gallery immediately upon closing the admin panel
         }
 
         function showAdminTab(tabName, element = null) {
-            // Hide all views
             document.querySelectorAll('.admin-view').forEach(view => view.classList.remove('active'));
-            // Remove active from all nav items
             document.querySelectorAll('.admin-nav-item').forEach(item => item.classList.remove('active'));
             
-            // Show target view
             document.getElementById(`view-${tabName}`).classList.add('active');
             
-            // Set active nav item
             if (element) {
                 element.classList.add('active');
             } else {
-                // Find the nav item by tab name if element isn't passed
                 const navItems = document.querySelectorAll('.admin-nav-item');
                 if (tabName === 'dashboard') navItems[0].classList.add('active');
                 if (tabName === 'gallery') navItems[1].classList.add('active');
@@ -1331,7 +1208,6 @@
             document.getElementById('totalImagesCount').innerText = galleryData.length;
         }
 
-        // Render the Admin Gallery Grid
         function renderAdminGallery() {
             const grid = document.getElementById('adminGalleryGrid');
             grid.innerHTML = '';
@@ -1359,7 +1235,6 @@
             });
         }
 
-        // Reset Form to "Add New" state
         function resetAdminForm() {
             document.getElementById('mediaForm').reset();
             document.getElementById('editId').value = '';
@@ -1369,7 +1244,6 @@
             document.getElementById('mediaImage').required = true;
         }
 
-        // Trigger Edit
         function editMedia(id) {
             const item = galleryData.find(i => i.id === id);
             if (!item) return;
@@ -1381,27 +1255,25 @@
             document.getElementById('mediaCategory').value = item.category;
             document.getElementById('formTitle').innerText = 'Edit Media';
             
-            // Show existing image preview
             document.getElementById('imagePreview').src = item.image;
             document.getElementById('imagePreviewBox').style.display = 'block';
             document.getElementById('fileUploadLabel').innerHTML = '<i class="fas fa-sync-alt" style="font-size: 1.5rem; margin-bottom: 10px; display: block;"></i> Click to replace image (optional)';
             
-            // Image is not required for editing
             document.getElementById('mediaImage').required = false;
 
             showAdminTab('upload');
         }
 
-        // Trigger Delete
+        // FIXED: deleteMedia now forces renderMainGallery
         function deleteMedia(id) {
             if (confirm("Are you sure you want to permanently delete this media?")) {
                 galleryData = galleryData.filter(item => item.id !== id);
                 saveData();
-                renderAdminGallery();
+                renderAdminGallery(); // Update admin view
+                renderMainGallery();  // CRITICAL FIX: Update the main homepage view instantly
             }
         }
 
-        // Handle Form Submission (Add or Edit)
         function handleMediaSubmit(e) {
             e.preventDefault();
             
@@ -1412,7 +1284,7 @@
             const file = fileInput.files[0];
 
             if (id) {
-                // Editing existing
+                // Editing
                 const index = galleryData.findIndex(item => item.id == id);
                 if (index > -1) {
                     galleryData[index].caption = caption;
@@ -1423,18 +1295,20 @@
                         reader.onload = function(event) {
                             galleryData[index].image = event.target.result;
                             saveData();
+                            renderMainGallery(); // CRITICAL FIX: Update main gallery
                             alert('Media updated successfully!');
                             showAdminTab('gallery');
                         };
                         reader.readAsDataURL(file);
                     } else {
                         saveData();
+                        renderMainGallery(); // CRITICAL FIX: Update main gallery
                         alert('Media details updated successfully!');
                         showAdminTab('gallery');
                     }
                 }
             } else {
-                // Adding new
+                // Adding New
                 if (!file) {
                     alert("Please select an image file.");
                     return;
@@ -1450,6 +1324,7 @@
                     };
                     galleryData.unshift(newItem);
                     saveData();
+                    renderMainGallery(); // CRITICAL FIX: Update main gallery
                     alert('New media added successfully!');
                     showAdminTab('gallery');
                 };
@@ -1457,7 +1332,6 @@
             }
         }
 
-        // Preview Image on Upload
         function previewImage(event) {
             const file = event.target.files[0];
             if (file) {
@@ -1546,4 +1420,4 @@
         }
     </script>
 </body>
-                        </html>
+</html>
