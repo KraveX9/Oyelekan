@@ -73,7 +73,7 @@
         }
 
         .section-padding {
-            padding: 120px 0;
+            padding: 100px 0;
         }
 
         .section-title {
@@ -93,7 +93,7 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 1rem;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -175,9 +175,6 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .logo span {
@@ -335,440 +332,357 @@
         }
 
         /* =========================================
-           ABOUT SECTION
+           LOOKBOOK SLIDER SECTION (Unique Slider)
            ========================================= */
-        .about {
+        .lookbook {
             background: var(--bg-dark);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-img {
-            border-radius: 4px;
             overflow: hidden;
+        }
+
+        .slider-container {
             position: relative;
+            padding: 20px 0;
+            cursor: grab;
         }
 
-        .about-img img {
-            width: 100%;
-            height: 650px;
-            object-fit: cover;
-            transition: var(--transition);
+        .slider-container:active {
+            cursor: grabbing;
         }
 
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .about-text h2 span {
-            color: var(--accent);
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-            font-weight: 300;
-        }
-
-        .about-features {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .feature-item {
+        .slider-track {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE 10+ */
+            padding-bottom: 30px;
         }
 
-        .feature-item i {
-            color: var(--accent);
-            font-size: 1.5rem;
+        .slider-track::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
         }
 
-        .feature-item span {
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* =========================================
-           COLLECTIONS SECTION
-           ========================================= */
-        .collections {
-            background: var(--bg-card);
-        }
-
-        .collection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .collection-card {
-            background: var(--bg-dark);
+        .slide-card {
+            min-width: 350px;
+            height: 500px;
             border-radius: 4px;
             overflow: hidden;
-            transition: var(--transition);
             position: relative;
+            scroll-snap-align: center;
+            flex-shrink: 0;
             border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
         }
 
-        .collection-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(197, 155, 39, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        .slide-card:hover {
+            border-color: rgba(197, 155, 39, 0.4);
         }
 
-        .collection-img {
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .collection-img img {
+        .slide-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
 
-        .collection-card:hover .collection-img img {
+        .slide-card:hover img {
             transform: scale(1.08);
         }
 
-        .collection-tag {
+        .slide-info {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--accent);
-            color: var(--bg-dark);
-            padding: 6px 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 2px;
-        }
-
-        .collection-info {
+            bottom: 0;
+            left: 0;
+            width: 100%;
             padding: 30px;
-            text-align: center;
+            background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
         }
 
-        .collection-info h3 {
+        .slide-info h3 {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            color: var(--white);
         }
 
-        .collection-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .collection-link {
+        .slide-info p {
             color: var(--accent);
             font-size: 0.85rem;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .collection-link:hover {
-            color: var(--accent-hover);
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .slider-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-dark);
         }
 
         /* =========================================
-           BESPOKE SECTION
+           DYNAMIC GALLERY SECTION
            ========================================= */
-        .bespoke {
-            background: var(--bg-dark);
-        }
-
-        .bespoke-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .bespoke-text h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .bespoke-text h2 span {
-            color: var(--accent);
-        }
-
-        .bespoke-text p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        .bespoke-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .step-item {
-            display: flex;
-            gap: 20px;
-        }
-
-        .step-number {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--accent);
-            font-weight: 700;
-            min-width: 40px;
-        }
-
-        .step-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .step-content p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        .bespoke-img {
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .bespoke-img img {
-            width: 100%;
-            height: 650px;
-            object-fit: cover;
-        }
-
-        /* =========================================
-           CONTACT SECTION
-           ========================================= */
-        .contact {
+        .gallery {
             background: var(--bg-card);
         }
 
-        .contact-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .contact-info h3 {
+        .gallery-item {
+            background: var(--bg-dark);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(197, 155, 39, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .gallery-img-container {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover .gallery-img-container img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            padding: 25px;
+            text-align: center;
+            background: var(--bg-dark);
+        }
+
+        .gallery-caption h3 {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
+        .gallery-caption p {
             color: var(--accent);
-            margin-top: 5px;
-            width: 50px;
-            height: 50px;
-            background: rgba(197, 155, 39, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            border: 1px solid rgba(197, 155, 39, 0.2);
-        }
-
-        .contact-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .contact-item p, .contact-item a {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.8;
+        /* =========================================
+           ADMIN DASHBOARD MODAL
+           ========================================= */
+        .admin-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .contact-item a:hover {
+        .admin-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .admin-panel {
+            background: var(--bg-card);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid rgba(197, 155, 39, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        .admin-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .admin-close:hover {
             color: var(--accent);
         }
 
-        .contact-form {
-            background: var(--bg-dark);
-            padding: 50px;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
+        .admin-panel h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
             margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .admin-panel > p {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .upload-form-group {
+            margin-bottom: 20px;
+        }
+
+        .upload-form-group label {
+            display: block;
+            margin-bottom: 8px;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
         }
 
-        .form-control {
+        .upload-form-group input[type="text"] {
             width: 100%;
-            padding: 16px;
-            background: transparent;
+            padding: 12px 15px;
+            background: var(--bg-dark);
             border: 1px solid rgba(255,255,255,0.1);
             color: var(--text-main);
-            font-family: var(--font-body);
-            font-size: 1rem;
+            border-radius: 4px;
             outline: none;
-            transition: var(--transition);
-            border-radius: 2px;
+            font-family: var(--font-body);
         }
 
-        .form-control:focus {
+        .upload-form-group input[type="text"]:focus {
             border-color: var(--accent);
-            background: rgba(197, 155, 39, 0.05);
         }
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 150px;
+        .file-upload-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
         }
 
-        /* =========================================
-           FOOTER
-           ========================================= */
-        footer {
-            background: #050505;
-            padding: 80px 0 30px;
+        .file-upload-wrapper input[type="file"] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: rgba(197, 155, 39, 0.1);
+            border: 2px dashed var(--accent);
+            border-radius: 4px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .footer-logo span {
             color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-main);
-            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: var(--transition);
         }
 
-        .social-links a:hover {
+        .file-upload-btn:hover {
+            background: rgba(197, 155, 39, 0.2);
+        }
+
+        .admin-submit-btn {
+            width: 100%;
+            padding: 15px;
             background: var(--accent);
             color: var(--bg-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(197, 155, 39, 0.3);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
         }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            margin-left: 20px;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
+        .admin-submit-btn:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 0 20px rgba(197, 155, 39, 0.4);
         }
 
         /* =========================================
-           FLOATING WHATSAPP BUTTON
+           CONTACT & FOOTER (Previous design retained)
            ========================================= */
+        .contact { background: var(--bg-dark); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact-info h3 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 30px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 35px; }
+        .contact-item i { font-size: 1.5rem; color: var(--accent); margin-top: 5px; width: 50px; height: 50px; background: rgba(197, 155, 39, 0.1); display: flex; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid rgba(197, 155, 39, 0.2); }
+        .contact-item h4 { font-size: 1.1rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-item p, .contact-item a { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
+        .contact-item a:hover { color: var(--accent); }
+        
+        footer { background: #050505; padding: 60px 0 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-logo { font-family: var(--font-heading); font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-logo span { color: var(--accent); }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
+        .social-links a { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; justify-content: center; align-items: center; color: var(--text-main); font-size: 1.2rem; transition: var(--transition); }
+        .social-links a:hover { background: var(--accent); color: var(--bg-dark); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(197, 155, 39, 0.3); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
+        .footer-links a { margin-left: 20px; }
+        .footer-links a:hover { color: var(--accent); }
+
         .whatsapp-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: #25D366;
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            animation: pulse 2s infinite;
-            transition: var(--transition);
+            position: fixed; bottom: 40px; right: 40px; background: #25D366; color: #fff;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center;
+            align-items: center; font-size: 2rem; z-index: 1000; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite; transition: var(--transition);
         }
-
-        .whatsapp-float:hover {
-            background: #128C7E;
-            color: #fff;
-            transform: scale(1.1);
-            animation: none;
-        }
-
+        .whatsapp-float:hover { background: #128C7E; color: #fff; transform: scale(1.1); animation: none; }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -780,42 +694,22 @@
            ========================================= */
         @media (max-width: 1024px) {
             .hero-content h1 { font-size: 4rem; }
-            .about-grid, .bespoke-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
-            .about-img img, .bespoke-img img { height: 500px; }
-            .collection-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .hamburger { display: block; }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                height: 100vh;
-                background: var(--bg-card);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-                box-shadow: -10px 0 30px rgba(0,0,0,0.9);
-                border-left: 1px solid rgba(197, 155, 39, 0.2);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
+            .nav-links { position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: var(--bg-card); flex-direction: column; justify-content: center; align-items: center; transition: var(--transition); box-shadow: -10px 0 30px rgba(0,0,0,0.9); border-left: 1px solid rgba(197, 155, 39, 0.2); }
+            .nav-links.active { right: 0; }
             .hero-content h1 { font-size: 2.8rem; }
             .hero-btns { flex-direction: column; gap: 15px; }
             .section-title { font-size: 2.2rem; }
-            .collection-grid { grid-template-columns: 1fr; }
-            .contact-form { padding: 30px; }
+            .gallery-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
             .footer-links a { margin: 0 10px; }
-            .about-features { grid-template-columns: 1fr; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
+            .slide-card { min-width: 280px; height: 400px; }
         }
     </style>
 </head>
@@ -828,9 +722,8 @@
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#collections" onclick="closeMenu()">Collections</a></li>
-                <li><a href="#bespoke" onclick="closeMenu()">Bespoke</a></li>
+                <li><a href="#lookbook" onclick="closeMenu()">Lookbook</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
             
@@ -842,7 +735,6 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section id="home" class="hero">
-        <!-- Background Slider Images -->
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop');"></div>
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop');"></div>
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop');"></div>
@@ -853,7 +745,7 @@
             <h1 class="reveal">Bespoke Fashion.<br>Unisex <span>Elegance.</span></h1>
             <p class="reveal">Crafted in Lagos, worn worldwide. Oyelekan Africa Limited redefines contemporary fashion with custom-tailored, high-quality bespoke wears for everyone.</p>
             <div class="hero-btns reveal">
-                <a href="#collections" class="btn btn-solid">Explore Collections</a>
+                <a href="#gallery" class="btn btn-solid">Explore Gallery</a>
                 <a href="#contact" class="btn">Book a Fitting</a>
             </div>
         </div>
@@ -875,128 +767,62 @@
         </div>
     </div>
 
-    <!-- ================= ABOUT SECTION ================= -->
-    <section id="about" class="about section-padding">
-        <div class="container about-grid">
-            <div class="about-img reveal">
-                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1974&auto=format&fit=crop" alt="Oyelekan Africa Fashion">
-            </div>
-            <div class="about-text reveal">
-                <h2>The Art of <span>Bespoke.</span></h2>
-                <p>Welcome to Oyelekan Africa Limited. We are a premier unisex fashion brand based in the heart of Ojodu Berger, Ikeja, Lagos. Our passion lies in crafting bespoke wears that perfectly blend contemporary style with exceptional craftsmanship.</p>
-                <p>We believe that fashion is a form of self-expression. Whether you're looking for a tailored suit, a stunning gown, or a unique streetwear piece, our bespoke service ensures a perfect fit and a design that is exclusively yours.</p>
-                
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Custom Measurements</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Premium Fabrics</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Unisex Designs</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Expert Tailoring</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= COLLECTIONS SECTION ================= -->
-    <section id="collections" class="collections section-padding">
+    <!-- ================= LOOKBOOK SLIDER SECTION ================= -->
+    <section id="lookbook" class="lookbook section-padding">
         <div class="container">
-            <h2 class="section-title reveal">Our <span>Collections</span></h2>
-            <p class="section-subtitle reveal">Discover our latest unisex drops and bespoke designs</p>
-            
-            <div class="collection-grid">
-                <!-- Product 1 -->
-                <div class="collection-card reveal">
-                    <div class="collection-img">
-                        <span class="collection-tag">Bespoke</span>
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop" alt="Custom Suit">
+            <h2 class="section-title reveal">The <span>Lookbook</span></h2>
+            <p class="section-subtitle reveal">Swipe through our latest bespoke creations</p>
+        </div>
+        
+        <div class="container">
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Slider items will be dynamically loaded or hardcoded here -->
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop" alt="Signature Suit">
+                        <div class="slide-info">
+                            <h3>The Signature Suit</h3>
+                            <p>Bespoke Tailoring</p>
+                        </div>
                     </div>
-                    <div class="collection-info">
-                        <h3>The Signature Suit</h3>
-                        <p>Tailored to perfection for the modern individual.</p>
-                        <a href="https://wa.me/2347064632185?text=Hello%20Oyelekan%20Africa,%20I'm%20interested%20in%20the%20Signature%20Suit." target="_blank" class="collection-link">Inquire on WhatsApp <i class="fas fa-arrow-right"></i></a>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop" alt="Urban Streetwear">
+                        <div class="slide-info">
+                            <h3>Urban Streetwear</h3>
+                            <p>Unisex Collection</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="collection-card reveal">
-                    <div class="collection-img">
-                        <span class="collection-tag">Unisex</span>
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop" alt="Oversized Hoodie">
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop" alt="Evening Elegance">
+                        <div class="slide-info">
+                            <h3>Evening Elegance</h3>
+                            <p>Limited Edition</p>
+                        </div>
                     </div>
-                    <div class="collection-info">
-                        <h3>Urban Streetwear</h3>
-                        <p>Comfortable, stylish, and designed for everyone.</p>
-                        <a href="https://wa.me/2347064632185?text=Hello%20Oyelekan%20Africa,%20I'm%20interested%20in%20the%20Urban%20Streetwear%20collection." target="_blank" class="collection-link">Inquire on WhatsApp <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="collection-card reveal">
-                    <div class="collection-img">
-                        <span class="collection-tag">Limited</span>
-                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop" alt="Elegant Dress">
-                    </div>
-                    <div class="collection-info">
-                        <h3>The Evening Elegance</h3>
-                        <p>Sophisticated bespoke gowns for special occasions.</p>
-                        <a href="https://wa.me/2347064632185?text=Hello%20Oyelekan%20Africa,%20I'm%20interested%20in%20the%20Evening%20Elegance%20collection." target="_blank" class="collection-link">Inquire on WhatsApp <i class="fas fa-arrow-right"></i></a>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop" alt="Cargo Pants">
+                        <div class="slide-info">
+                            <h3>Utility Cargo</h3>
+                            <p>Streetwear</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn" id="slidePrev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="slideNext"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- ================= BESPOKE PROCESS SECTION ================= -->
-    <section id="bespoke" class="bespoke section-padding">
-        <div class="container bespoke-grid">
-            <div class="bespoke-text reveal">
-                <h2>Your Vision, <span>Our Craft.</span></h2>
-                <p>Experience the luxury of a garment made exclusively for you. Our bespoke process is a collaborative journey from concept to creation.</p>
-                
-                <div class="bespoke-steps">
-                    <div class="step-item">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h4>Consultation</h4>
-                            <p>We discuss your style preferences, occasion, and vision.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h4>Measurements</h4>
-                            <p>Precise measurements are taken to ensure a flawless fit.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h4>Fabric Selection</h4>
-                            <p>Choose from our curated collection of premium fabrics.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">04</div>
-                        <div class="step-content">
-                            <h4>Tailoring & Delivery</h4>
-                            <p>Expert craftsmanship brings your garment to life, ready for delivery.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bespoke-img reveal">
-                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop" alt="Bespoke Tailoring Process">
+    <!-- ================= DYNAMIC GALLERY SECTION ================= -->
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <h2 class="section-title reveal">Our <span>Gallery</span></h2>
+            <p class="section-subtitle reveal">A curated selection of our finest work</p>
+            
+            <div class="gallery-grid" id="dynamicGallery">
+                <!-- Gallery items will be dynamically generated by JavaScript -->
             </div>
         </div>
     </section>
@@ -1050,25 +876,15 @@
                     <form onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" required placeholder="Your Name">
+                            <input type="text" id="name" class="form-control" required placeholder="Your Name" style="width: 100%; padding: 16px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); outline: none; border-radius: 2px; margin-bottom: 20px;">
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" class="form-control" required style="background: #0a0a0a;">
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="bespoke-suit">Bespoke Suit</option>
-                                <option value="bespoke-gown">Bespoke Gown</option>
-                                <option value="streetwear">Custom Streetwear</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
+                            <input type="email" id="email" class="form-control" required placeholder="Your Email" style="width: 100%; padding: 16px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); outline: none; border-radius: 2px; margin-bottom: 20px;">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required placeholder="Tell us about your design vision..."></textarea>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your design vision..." style="width: 100%; padding: 16px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); outline: none; border-radius: 2px; margin-bottom: 20px; resize: vertical; min-height: 150px;"></textarea>
                         </div>
                         <button type="submit" class="btn btn-solid" style="width: 100%;">Send Message</button>
                     </form>
@@ -1094,10 +910,42 @@
                 <div class="footer-links">
                     <a href="#home">Privacy Policy</a>
                     <a href="#home">Terms of Service</a>
+                    <!-- Admin Trigger -->
+                    <a href="#" onclick="openAdmin()" style="color: var(--accent); font-weight: 600;"><i class="fas fa-user-shield"></i> Admin Portal</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- ================= ADMIN DASHBOARD MODAL ================= -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-panel">
+            <span class="admin-close" onclick="closeAdmin()">&times;</span>
+            <h2>Admin Dashboard</h2>
+            <p>Upload new images and set captions to update the gallery instantly.</p>
+            
+            <form id="uploadForm" onsubmit="handleUpload(event)">
+                <div class="upload-form-group">
+                    <label for="imgCaption">Image Caption</label>
+                    <input type="text" id="imgCaption" placeholder="e.g., The Signature Suit" required>
+                </div>
+                
+                <div class="upload-form-group">
+                    <label for="imgUpload">Select Image</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="imgUpload" accept="image/*" required>
+                        <label for="imgUpload" class="file-upload-btn">
+                            <i class="fas fa-cloud-upload-alt" style="margin-right: 10px;"></i> Choose Image
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="admin-submit-btn">
+                    <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> Add to Gallery
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
     <a href="https://wa.me/2347064632185?text=Hello%20Oyelekan%20Africa,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" class="whatsapp-float">
@@ -1106,7 +954,179 @@
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
-        /* --- Navbar Scroll Effect --- */
+        /* =========================================
+           DYNAMIC GALLERY DATA
+           ========================================= */
+        // Initial hardcoded gallery data
+        let galleryData = [
+            {
+                image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop',
+                caption: 'The Signature Suit',
+                category: 'Bespoke Tailoring'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop',
+                caption: 'Urban Streetwear',
+                category: 'Unisex Collection'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop',
+                caption: 'Evening Elegance',
+                category: 'Limited Edition'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop',
+                caption: 'Utility Cargo',
+                category: 'Streetwear'
+            }
+        ];
+
+        // Function to render the gallery dynamically
+        function renderGallery() {
+            const galleryGrid = document.getElementById('dynamicGallery');
+            galleryGrid.innerHTML = ''; // Clear existing items
+
+            galleryData.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item reveal';
+                
+                galleryItem.innerHTML = `
+                    <div class="gallery-img-container">
+                        <img src="${item.image}" alt="${item.caption}">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>${item.caption}</h3>
+                        <p>${item.category}</p>
+                    </div>
+                `;
+                
+                galleryGrid.appendChild(galleryItem);
+
+                // Trigger reveal animation for new items
+                setTimeout(() => {
+                    galleryItem.classList.add('active');
+                }, 100);
+            });
+        }
+
+        // Initialize gallery on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+            initSlider();
+            initReveal();
+        });
+
+        /* =========================================
+           ADMIN DASHBOARD LOGIC
+           ========================================= */
+        const adminModal = document.getElementById('adminModal');
+
+        function openAdmin() {
+            adminModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAdmin() {
+            adminModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleUpload(e) {
+            e.preventDefault();
+            
+            const captionInput = document.getElementById('imgCaption');
+            const fileInput = document.getElementById('imgUpload');
+            const file = fileInput.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    // Create new gallery item object
+                    const newItem = {
+                        image: event.target.result, // Base64 string
+                        caption: captionInput.value,
+                        category: 'New Arrival' // Default category for new uploads
+                    };
+                    
+                    // Add to our data array
+                    galleryData.unshift(newItem); // Add to the beginning
+                    
+                    // Re-render gallery
+                    renderGallery();
+                    
+                    // Reset form and close modal
+                    document.getElementById('uploadForm').reset();
+                    closeAdmin();
+                    
+                    // Show success alert
+                    alert('Image successfully uploaded to the gallery!');
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Close modal on outside click
+        adminModal.addEventListener('click', (e) => {
+            if (e.target === adminModal) {
+                closeAdmin();
+            }
+        });
+
+        /* =========================================
+           UNIQUE GALLERY SLIDER LOGIC
+           ========================================= */
+        function initSlider() {
+            const track = document.getElementById('sliderTrack');
+            const prevBtn = document.getElementById('slidePrev');
+            const nextBtn = document.getElementById('slideNext');
+            
+            // Scroll amount based on card width + gap
+            const scrollAmount = 375; 
+
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            // Drag to scroll functionality
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            track.addEventListener('mousedown', (e) => {
+                isDown = true;
+                track.style.cursor = 'grabbing';
+                startX = e.pageX - track.offsetLeft;
+                scrollLeft = track.scrollLeft;
+            });
+
+            track.addEventListener('mouseleave', () => {
+                isDown = false;
+                track.style.cursor = 'grab';
+            });
+
+            track.addEventListener('mouseup', () => {
+                isDown = false;
+                track.style.cursor = 'grab';
+            });
+
+            track.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll speed multiplier
+                track.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        /* =========================================
+           GENERAL SITE LOGIC (Navbar, Reveal, Hero)
+           ========================================= */
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1116,7 +1136,6 @@
             }
         });
 
-        /* --- Mobile Menu Toggle --- */
         const navLinks = document.getElementById('navLinks');
         function toggleMenu() {
             navLinks.classList.toggle('active');
@@ -1125,37 +1144,33 @@
             navLinks.classList.remove('active');
         }
 
-        /* --- Hero Background Slider --- */
+        // Hero Background Slider
         const heroBgs = document.querySelectorAll('.hero-bg');
         let currentBg = 0;
-        
         function nextBg() {
             heroBgs[currentBg].classList.remove('active');
             currentBg = (currentBg + 1) % heroBgs.length;
             heroBgs[currentBg].classList.add('active');
         }
-        
-        // Initialize first slide
-        heroBgs[0].classList.add('active');
-        // Change slide every 5 seconds
-        setInterval(nextBg, 5000);
+        if(heroBgs.length > 0) {
+            heroBgs[0].classList.add('active');
+            setInterval(nextBg, 5000);
+        }
 
-        /* --- Scroll Reveal Animation --- */
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
+        // Scroll Reveal Animation
+        function initReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealElements.forEach(el => revealObserver.observe(el));
+        }
 
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        /* --- Contact Form Submission (Demo) --- */
+        // Contact Form Submission
         function handleFormSubmit(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button');
@@ -1176,4 +1191,4 @@
         }
     </script>
 </body>
-  </html>
+                                </html>
