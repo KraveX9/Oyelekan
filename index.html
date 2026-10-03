@@ -332,7 +332,7 @@
         }
 
         /* =========================================
-           LOOKBOOK SLIDER SECTION (Unique Slider)
+           LOOKBOOK SLIDER SECTION
            ========================================= */
         .lookbook {
             background: var(--bg-dark);
@@ -354,13 +354,13 @@
             gap: 25px;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE 10+ */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             padding-bottom: 30px;
         }
 
         .slider-track::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .slide-card {
@@ -507,6 +507,42 @@
             letter-spacing: 1px;
         }
 
+        /* Admin Actions Overlay */
+        .admin-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .gallery-item:hover .admin-actions {
+            opacity: 1;
+        }
+
+        .admin-btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .admin-btn-icon:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+            border-color: var(--accent);
+        }
+
         /* =========================================
            ADMIN DASHBOARD MODAL
            ========================================= */
@@ -534,7 +570,7 @@
         .admin-panel {
             background: var(--bg-card);
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             max-height: 90vh;
             overflow-y: auto;
             border-radius: 12px;
@@ -570,6 +606,39 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 0.9rem;
+        }
+
+        /* Admin Tabs */
+        .admin-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .admin-tab {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: var(--transition);
+        }
+
+        .admin-tab.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .upload-form-group {
@@ -654,8 +723,97 @@
             box-shadow: 0 0 20px rgba(197, 155, 39, 0.4);
         }
 
+        .reset-btn {
+            background: transparent;
+            border: 1px solid #ff4444;
+            color: #ff4444;
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 15px;
+        }
+
+        .reset-btn:hover {
+            background: #ff4444;
+            color: #fff;
+        }
+
+        /* Manage List */
+        .manage-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .manage-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--bg-dark);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .manage-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .manage-item-info {
+            flex: 1;
+        }
+
+        .manage-item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .manage-item-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .manage-item-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .manage-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .manage-btn.edit {
+            background: rgba(197, 155, 39, 0.2);
+            color: var(--accent);
+        }
+        .manage-btn.edit:hover { background: var(--accent); color: var(--bg-dark); }
+
+        .manage-btn.delete {
+            background: rgba(255, 68, 68, 0.2);
+            color: #ff4444;
+        }
+        .manage-btn.delete:hover { background: #ff4444; color: #fff; }
+
         /* =========================================
-           CONTACT & FOOTER (Previous design retained)
+           CONTACT & FOOTER
            ========================================= */
         .contact { background: var(--bg-dark); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -710,6 +868,7 @@
             .footer-links a { margin: 0 10px; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
             .slide-card { min-width: 280px; height: 400px; }
+            .admin-panel { padding: 25px; }
         }
     </style>
 </head>
@@ -777,7 +936,6 @@
         <div class="container">
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Slider items will be dynamically loaded or hardcoded here -->
                     <div class="slide-card">
                         <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop" alt="Signature Suit">
                         <div class="slide-info">
@@ -922,28 +1080,47 @@
         <div class="admin-panel">
             <span class="admin-close" onclick="closeAdmin()">&times;</span>
             <h2>Admin Dashboard</h2>
-            <p>Upload new images and set captions to update the gallery instantly.</p>
+            <p>Manage your website's gallery media</p>
             
-            <form id="uploadForm" onsubmit="handleUpload(event)">
-                <div class="upload-form-group">
-                    <label for="imgCaption">Image Caption</label>
-                    <input type="text" id="imgCaption" placeholder="e.g., The Signature Suit" required>
-                </div>
-                
-                <div class="upload-form-group">
-                    <label for="imgUpload">Select Image</label>
-                    <div class="file-upload-wrapper">
-                        <input type="file" id="imgUpload" accept="image/*" required>
-                        <label for="imgUpload" class="file-upload-btn">
-                            <i class="fas fa-cloud-upload-alt" style="margin-right: 10px;"></i> Choose Image
-                        </label>
+            <!-- Admin Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchTab('add')">Upload New</button>
+                <button class="admin-tab" onclick="switchTab('manage')">Manage Gallery</button>
+            </div>
+
+            <!-- Tab 1: Add New -->
+            <div class="tab-content active" id="tab-add">
+                <form id="uploadForm" onsubmit="handleUpload(event)">
+                    <div class="upload-form-group">
+                        <label for="imgCaption">Image Caption</label>
+                        <input type="text" id="imgCaption" placeholder="e.g., The Signature Suit" required>
                     </div>
+                    
+                    <div class="upload-form-group">
+                        <label for="imgUpload">Select Image</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="imgUpload" accept="image/*" required>
+                            <label for="imgUpload" class="file-upload-btn" id="fileUploadLabel">
+                                <i class="fas fa-cloud-upload-alt" style="margin-right: 10px;"></i> Choose Image
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="admin-submit-btn" id="submitBtn">
+                        <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> Add to Gallery
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tab 2: Manage Gallery -->
+            <div class="tab-content" id="tab-manage">
+                <div class="manage-list" id="manageList">
+                    <!-- Dynamic list of images with Edit/Delete buttons -->
                 </div>
-                
-                <button type="submit" class="admin-submit-btn">
-                    <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> Add to Gallery
+                <button class="reset-btn" onclick="resetGallery()">
+                    <i class="fas fa-undo"></i> Reset to Default Images
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -955,36 +1132,33 @@
     <!-- ================= JAVASCRIPT ================= -->
     <script>
         /* =========================================
-           DYNAMIC GALLERY DATA
+           DYNAMIC GALLERY DATA & LOCAL STORAGE
            ========================================= */
-        // Initial hardcoded gallery data
-        let galleryData = [
-            {
-                image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop',
-                caption: 'The Signature Suit',
-                category: 'Bespoke Tailoring'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop',
-                caption: 'Urban Streetwear',
-                category: 'Unisex Collection'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop',
-                caption: 'Evening Elegance',
-                category: 'Limited Edition'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop',
-                caption: 'Utility Cargo',
-                category: 'Streetwear'
-            }
+        const defaultGalleryData = [
+            { id: 1, image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop', caption: 'The Signature Suit', category: 'Bespoke Tailoring' },
+            { id: 2, image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop', caption: 'Urban Streetwear', category: 'Unisex Collection' },
+            { id: 3, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop', caption: 'Evening Elegance', category: 'Limited Edition' },
+            { id: 4, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop', caption: 'Utility Cargo', category: 'Streetwear' }
         ];
 
-        // Function to render the gallery dynamically
+        // Load from localStorage or use defaults
+        let galleryData = JSON.parse(localStorage.getItem('oyelekanGallery')) || [...defaultGalleryData];
+
+        // Save to localStorage
+        function saveData() {
+            try {
+                localStorage.setItem('oyelekanGallery', JSON.stringify(galleryData));
+            } catch (e) {
+                alert("Storage limit reached! Please delete some images or upload smaller files.");
+            }
+        }
+
+        /* =========================================
+           RENDERING FUNCTIONS
+           ========================================= */
         function renderGallery() {
             const galleryGrid = document.getElementById('dynamicGallery');
-            galleryGrid.innerHTML = ''; // Clear existing items
+            galleryGrid.innerHTML = '';
 
             galleryData.forEach(item => {
                 const galleryItem = document.createElement('div');
@@ -993,96 +1167,186 @@
                 galleryItem.innerHTML = `
                     <div class="gallery-img-container">
                         <img src="${item.image}" alt="${item.caption}">
+                        <div class="admin-actions">
+                            <button class="admin-btn-icon" onclick="editImage(${item.id})" title="Edit"><i class="fas fa-pen"></i></button>
+                            <button class="admin-btn-icon" onclick="deleteImage(${item.id})" title="Delete"><i class="fas fa-trash"></i></button>
+                        </div>
                     </div>
                     <div class="gallery-caption">
                         <h3>${item.caption}</h3>
-                        <p>${item.category}</p>
+                        <p>${item.category || 'New Arrival'}</p>
                     </div>
                 `;
                 
                 galleryGrid.appendChild(galleryItem);
-
-                // Trigger reveal animation for new items
-                setTimeout(() => {
-                    galleryItem.classList.add('active');
-                }, 100);
+                setTimeout(() => galleryItem.classList.add('active'), 100);
             });
         }
 
-        // Initialize gallery on load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderGallery();
-            initSlider();
-            initReveal();
-        });
+        function renderAdminManageList() {
+            const manageList = document.getElementById('manageList');
+            manageList.innerHTML = '';
+
+            galleryData.forEach(item => {
+                const manageItem = document.createElement('div');
+                manageItem.className = 'manage-item';
+                manageItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.caption}">
+                    <div class="manage-item-info">
+                        <h4>${item.caption}</h4>
+                        <p>${item.category || 'New Arrival'}</p>
+                    </div>
+                    <div class="manage-item-actions">
+                        <button class="manage-btn edit" onclick="editImage(${item.id})"><i class="fas fa-pen"></i></button>
+                        <button class="manage-btn delete" onclick="deleteImage(${item.id})"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                manageList.appendChild(manageItem);
+            });
+        }
 
         /* =========================================
-           ADMIN DASHBOARD LOGIC
+           ADMIN LOGIC (CRUD)
            ========================================= */
-        const adminModal = document.getElementById('adminModal');
+        let editingId = null;
 
         function openAdmin() {
-            adminModal.classList.add('active');
+            document.getElementById('adminModal').classList.add('active');
             document.body.style.overflow = 'hidden';
+            renderAdminManageList();
+            resetForm();
         }
 
         function closeAdmin() {
-            adminModal.classList.remove('active');
+            document.getElementById('adminModal').classList.remove('active');
             document.body.style.overflow = 'auto';
+            resetForm();
         }
 
+        function switchTab(tabName) {
+            document.querySelectorAll('.admin-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            if(tabName === 'manage') renderAdminManageList();
+        }
+
+        function resetForm() {
+            editingId = null;
+            document.getElementById('uploadForm').reset();
+            document.getElementById('fileUploadLabel').innerHTML = '<i class="fas fa-cloud-upload-alt" style="margin-right: 10px;"></i> Choose Image';
+            document.getElementById('submitBtn').innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 10px;"></i> Add to Gallery';
+            document.getElementById('imgUpload').required = true;
+        }
+
+        // Handle Create & Update
         function handleUpload(e) {
             e.preventDefault();
             
-            const captionInput = document.getElementById('imgCaption');
+            const caption = document.getElementById('imgCaption').value;
             const fileInput = document.getElementById('imgUpload');
             const file = fileInput.files[0];
             
+            // If editing and no new file is uploaded, just update the caption
+            if (editingId !== null && !file) {
+                const index = galleryData.findIndex(item => item.id === editingId);
+                if (index > -1) {
+                    galleryData[index].caption = caption;
+                    saveData();
+                    renderGallery();
+                    closeAdmin();
+                    alert('Caption updated successfully!');
+                }
+                return;
+            }
+
             if (file) {
                 const reader = new FileReader();
-                
                 reader.onload = function(event) {
-                    // Create new gallery item object
-                    const newItem = {
-                        image: event.target.result, // Base64 string
-                        caption: captionInput.value,
-                        category: 'New Arrival' // Default category for new uploads
-                    };
+                    const imageData = event.target.result;
+
+                    if (editingId !== null) {
+                        // Update existing image
+                        const index = galleryData.findIndex(item => item.id === editingId);
+                        if (index > -1) {
+                            galleryData[index].image = imageData;
+                            galleryData[index].caption = caption;
+                        }
+                    } else {
+                        // Add new image
+                        const newItem = {
+                            id: Date.now(), // Unique ID
+                            image: imageData,
+                            caption: caption,
+                            category: 'New Arrival'
+                        };
+                        galleryData.unshift(newItem);
+                    }
                     
-                    // Add to our data array
-                    galleryData.unshift(newItem); // Add to the beginning
-                    
-                    // Re-render gallery
+                    saveData();
                     renderGallery();
-                    
-                    // Reset form and close modal
-                    document.getElementById('uploadForm').reset();
                     closeAdmin();
-                    
-                    // Show success alert
-                    alert('Image successfully uploaded to the gallery!');
+                    alert(editingId ? 'Image updated successfully!' : 'Image added successfully!');
                 };
-                
                 reader.readAsDataURL(file);
+            } else {
+                alert("Please select an image file.");
             }
         }
 
-        // Close modal on outside click
-        adminModal.addEventListener('click', (e) => {
-            if (e.target === adminModal) {
-                closeAdmin();
+        // Handle Edit
+        function editImage(id) {
+            const item = galleryData.find(item => item.id === id);
+            if (!item) return;
+
+            editingId = id;
+            
+            // Pre-fill form
+            document.getElementById('imgCaption').value = item.caption;
+            document.getElementById('fileUploadLabel').innerHTML = '<i class="fas fa-check-circle" style="margin-right: 10px;"></i> Image Selected (Click to replace)';
+            document.getElementById('imgUpload').required = false; // Optional for edit
+            document.getElementById('submitBtn').innerHTML = '<i class="fas fa-save" style="margin-right: 10px;"></i> Update Image';
+            
+            // Switch to add tab and scroll to top
+            document.querySelectorAll('.admin-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelector('.admin-tab').classList.add('active'); // First tab
+            document.getElementById('tab-add').classList.add('active');
+            
+            document.getElementById('adminModal').scrollTop = 0;
+        }
+
+        // Handle Delete
+        function deleteImage(id) {
+            if (confirm("Are you sure you want to delete this image?")) {
+                galleryData = galleryData.filter(item => item.id !== id);
+                saveData();
+                renderGallery();
+                renderAdminManageList();
             }
-        });
+        }
+
+        // Handle Reset
+        function resetGallery() {
+            if (confirm("Are you sure you want to reset the gallery to the default images? All custom uploads will be lost.")) {
+                galleryData = [...defaultGalleryData];
+                saveData();
+                renderGallery();
+                renderAdminManageList();
+                alert("Gallery has been reset to defaults.");
+            }
+        }
 
         /* =========================================
-           UNIQUE GALLERY SLIDER LOGIC
+           SLIDER LOGIC
            ========================================= */
         function initSlider() {
             const track = document.getElementById('sliderTrack');
             const prevBtn = document.getElementById('slidePrev');
             const nextBtn = document.getElementById('slideNext');
             
-            // Scroll amount based on card width + gap
             const scrollAmount = 375; 
 
             nextBtn.addEventListener('click', () => {
@@ -1093,7 +1357,6 @@
                 track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
-            // Drag to scroll functionality
             let isDown = false;
             let startX;
             let scrollLeft;
@@ -1119,14 +1382,20 @@
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - track.offsetLeft;
-                const walk = (x - startX) * 2; // Scroll speed multiplier
+                const walk = (x - startX) * 2;
                 track.scrollLeft = scrollLeft - walk;
             });
         }
 
         /* =========================================
-           GENERAL SITE LOGIC (Navbar, Reveal, Hero)
+           GENERAL SITE LOGIC
            ========================================= */
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+            initSlider();
+            initReveal();
+        });
+
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1144,7 +1413,6 @@
             navLinks.classList.remove('active');
         }
 
-        // Hero Background Slider
         const heroBgs = document.querySelectorAll('.hero-bg');
         let currentBg = 0;
         function nextBg() {
@@ -1157,7 +1425,6 @@
             setInterval(nextBg, 5000);
         }
 
-        // Scroll Reveal Animation
         function initReveal() {
             const revealElements = document.querySelectorAll('.reveal');
             const revealObserver = new IntersectionObserver((entries) => {
@@ -1170,7 +1437,6 @@
             revealElements.forEach(el => revealObserver.observe(el));
         }
 
-        // Contact Form Submission
         function handleFormSubmit(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button');
@@ -1191,4 +1457,4 @@
         }
     </script>
 </body>
-                                </html>
+                </html>
