@@ -548,87 +548,36 @@
            FULL ADMIN DASHBOARD OVERLAY
            ========================================= */
         .admin-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: #0f1115;
-            z-index: 9999;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            font-family: var(--font-body);
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: #0f1115; z-index: 9999; display: none; opacity: 0; transition: opacity 0.4s ease; font-family: var(--font-body);
         }
 
-        .admin-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
+        .admin-overlay.active { display: flex; opacity: 1; }
 
         .admin-sidebar {
-            width: 280px;
-            background: #16181d;
-            border-right: 1px solid rgba(255,255,255,0.05);
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            width: 280px; background: #16181d; border-right: 1px solid rgba(255,255,255,0.05);
+            padding: 30px 20px; display: flex; flex-direction: column; height: 100%;
         }
 
-        .admin-logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--white);
-            margin-bottom: 40px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
+        .admin-logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--white); margin-bottom: 40px; text-align: center; letter-spacing: 2px; }
         .admin-logo span { color: var(--accent); }
 
         .admin-nav-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            color: var(--text-muted);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-bottom: 10px;
-            font-weight: 500;
+            display: flex; align-items: center; gap: 15px; padding: 15px 20px; color: var(--text-muted);
+            border-radius: 6px; cursor: pointer; transition: var(--transition); margin-bottom: 10px; font-weight: 500;
         }
 
-        .admin-nav-item:hover, .admin-nav-item.active {
-            background: rgba(197, 155, 39, 0.1);
-            color: var(--accent);
-        }
-
+        .admin-nav-item:hover, .admin-nav-item.active { background: rgba(197, 155, 39, 0.1); color: var(--accent); }
         .admin-nav-item i { width: 20px; text-align: center; }
 
         .admin-back-btn {
-            margin-top: auto;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            border: none;
-            padding: 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-weight: 600;
+            margin-top: auto; background: rgba(255,255,255,0.05); color: var(--text-main); border: none;
+            padding: 15px; border-radius: 6px; cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600;
         }
         .admin-back-btn:hover { background: var(--danger); color: #fff; }
 
-        .admin-main {
-            flex: 1;
-            padding: 40px;
-            overflow-y: auto;
-            height: 100%;
-        }
+        .admin-main { flex: 1; padding: 40px; overflow-y: auto; height: 100%; }
 
         .admin-view { display: none; animation: fadeIn 0.4s ease; }
         .admin-view.active { display: block; }
@@ -639,51 +588,21 @@
         }
 
         .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;
         }
 
-        .admin-header h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            color: var(--white);
-        }
+        .admin-header h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--white); }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 
-        .stat-card {
-            background: #16181d;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-        }
-
+        .stat-card { background: #16181d; padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
         .stat-card h3 { font-size: 2.5rem; color: var(--accent); margin-bottom: 10px; }
         .stat-card p { color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
-        .admin-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
+        .admin-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
 
-        .admin-gallery-item {
-            background: #16181d;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            position: relative;
-        }
-
+        .admin-gallery-item { background: #16181d; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative; }
         .admin-gallery-item img { width: 100%; height: 200px; object-fit: cover; }
 
         .admin-gallery-info { padding: 15px; }
@@ -703,9 +622,7 @@
         .action-btn.delete { background: rgba(231, 76, 60, 0.15); color: var(--danger); }
         .action-btn.delete:hover { background: var(--danger); color: #fff; }
 
-        .admin-form-container {
-            max-width: 600px; background: #16181d; padding: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);
-        }
+        .admin-form-container { max-width: 600px; background: #16181d; padding: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
 
         .form-group { margin-bottom: 25px; }
         .form-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
@@ -834,7 +751,6 @@
         <div class="container">
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Lookbook images are separate from the Gallery Grid. To change these, edit the HTML directly -->
                     <div class="slide-card">
                         <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=5" alt="Royal Lace Kaftan">
                         <div class="slide-info">
@@ -1014,7 +930,7 @@
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 30px; font-size: 0.9rem;">
-                    <i class="fas fa-info-circle"></i> Welcome to your content management system. Use the sidebar to manage your website's gallery images and captions. Changes saved here will instantly update the "Gallery Grid" on the homepage.
+                    <i class="fas fa-info-circle"></i> Welcome to your content management system. Use the sidebar to manage your website's gallery images and captions. Images are automatically compressed to save space.
                 </p>
             </div>
 
@@ -1077,7 +993,6 @@
                         </button>
                     </form>
                     
-                    <!-- New Emergency Reset Button -->
                     <button class="reset-btn" onclick="forceClearStorage()">
                         <i class="fas fa-exclamation-triangle"></i> Clear Browser Cache & Reset Gallery
                     </button>
@@ -1105,10 +1020,8 @@
             { id: 6, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop&v=5', caption: 'Tailored Kaftan Set', category: "Men's Bespoke" }
         ];
 
-        // Bumped key to v5 to force refresh
         const STORAGE_KEY = 'oyelekanGallery_v5';
         
-        // Load from localStorage or defaults
         let galleryData = [];
         try {
             const storedData = localStorage.getItem(STORAGE_KEY);
@@ -1123,7 +1036,7 @@
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(galleryData));
                 updateDashboardStats();
             } catch (e) {
-                alert("Storage limit reached! The images you uploaded are too large for the browser's local storage. Please try smaller images or use the 'Clear Browser Cache' button.");
+                alert("Storage limit reached even after compression. Please delete some images or click 'Clear Browser Cache'.");
             }
         }
 
@@ -1136,6 +1049,47 @@
                 renderAdminGallery();
                 alert("Browser cache cleared and gallery reset to defaults.");
                 showAdminTab('gallery');
+            }
+        }
+
+        /* =========================================
+           IMAGE COMPRESSION ENGINE (CRITICAL FIX)
+           ========================================= */
+        function compressImage(file, callback) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 1200; // Max width for compression
+                    const MAX_HEIGHT = 1200; // Max height for compression
+                    let width = img.width;
+                    let height = img.height;
+
+                    // Calculate new dimensions
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height;
+                            height = MAX_HEIGHT;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Compress to JPEG at 70% quality
+                    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+                    callback(compressedBase64);
+                }
             }
         }
 
@@ -1182,7 +1136,7 @@
             document.getElementById('adminOverlay').classList.remove('active');
             document.body.style.overflow = 'auto';
             document.getElementById('whatsappBtn').style.display = 'flex';
-            renderMainGallery(); // CRITICAL FIX: Refresh the main site gallery immediately upon closing the admin panel
+            renderMainGallery(); 
         }
 
         function showAdminTab(tabName, element = null) {
@@ -1264,13 +1218,12 @@
             showAdminTab('upload');
         }
 
-        // FIXED: deleteMedia now forces renderMainGallery
         function deleteMedia(id) {
             if (confirm("Are you sure you want to permanently delete this media?")) {
                 galleryData = galleryData.filter(item => item.id !== id);
                 saveData();
-                renderAdminGallery(); // Update admin view
-                renderMainGallery();  // CRITICAL FIX: Update the main homepage view instantly
+                renderAdminGallery(); 
+                renderMainGallery();  
             }
         }
 
@@ -1291,18 +1244,17 @@
                     galleryData[index].category = category;
 
                     if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(event) {
-                            galleryData[index].image = event.target.result;
+                        // COMPRESS AND SAVE
+                        compressImage(file, function(compressedImage) {
+                            galleryData[index].image = compressedImage;
                             saveData();
-                            renderMainGallery(); // CRITICAL FIX: Update main gallery
-                            alert('Media updated successfully!');
+                            renderMainGallery(); 
+                            alert('Media updated and compressed successfully!');
                             showAdminTab('gallery');
-                        };
-                        reader.readAsDataURL(file);
+                        });
                     } else {
                         saveData();
-                        renderMainGallery(); // CRITICAL FIX: Update main gallery
+                        renderMainGallery(); 
                         alert('Media details updated successfully!');
                         showAdminTab('gallery');
                     }
@@ -1314,21 +1266,20 @@
                     return;
                 }
                 
-                const reader = new FileReader();
-                reader.onload = function(event) {
+                // COMPRESS AND SAVE
+                compressImage(file, function(compressedImage) {
                     const newItem = {
                         id: Date.now(),
-                        image: event.target.result,
+                        image: compressedImage,
                         caption: caption,
                         category: category
                     };
                     galleryData.unshift(newItem);
                     saveData();
-                    renderMainGallery(); // CRITICAL FIX: Update main gallery
-                    alert('New media added successfully!');
+                    renderMainGallery(); 
+                    alert('New media added and compressed successfully!');
                     showAdminTab('gallery');
-                };
-                reader.readAsDataURL(file);
+                });
             }
         }
 
@@ -1420,4 +1371,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
