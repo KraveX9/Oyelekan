@@ -894,9 +894,9 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section id="home" class="hero">
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop');"></div>
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop');"></div>
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&v=3');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&v=3');"></div>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&v=3');"></div>
         
         <div class="hero-overlay"></div>
         
@@ -936,30 +936,30 @@
         <div class="container">
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Updated with African Fashion Images -->
+                    <!-- Updated with specifically African Fashion Images -->
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop" alt="Royal Lace Kaftan">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=3" alt="Royal Lace Kaftan">
                         <div class="slide-info">
                             <h3>Royal Lace Kaftan</h3>
                             <p>Bespoke Tailoring</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop" alt="Ankara Print Elegance">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=3" alt="Ankara Print Elegance">
                         <div class="slide-info">
                             <h3>Ankara Print Elegance</h3>
                             <p>Unisex Collection</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop" alt="Bespoke Agbada">
+                        <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=3" alt="Bespoke Agbada">
                         <div class="slide-info">
                             <h3>Bespoke Agbada</h3>
                             <p>Limited Edition</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop" alt="Contemporary Aso Oke">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=3" alt="Contemporary Aso Oke">
                         <div class="slide-info">
                             <h3>Contemporary Aso Oke</h3>
                             <p>Streetwear</p>
@@ -1119,7 +1119,7 @@
                     <!-- Dynamic list of images with Edit/Delete buttons -->
                 </div>
                 <button class="reset-btn" onclick="resetGallery()">
-                    <i class="fas fa-undo"></i> Reset to Default Images
+                    <i class="fas fa-undo"></i> Reset to Default African Attire Images
                 </button>
             </div>
         </div>
@@ -1135,49 +1135,49 @@
         /* =========================================
            DYNAMIC GALLERY DATA & LOCAL STORAGE
            ========================================= */
-        // Updated with beautifully styled African Attire
+        // Using guaranteed African Fashion Images from Unsplash with cache-busting parameters
         const defaultGalleryData = [
             { 
                 id: 1, 
-                image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop&v=3', 
                 caption: 'Royal Lace Kaftan', 
                 category: 'Bespoke Tailoring' 
             },
             { 
                 id: 2, 
-                image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop&v=3', 
                 caption: 'Ankara Print Elegance', 
                 category: 'Unisex Collection' 
             },
             { 
                 id: 3, 
-                image: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop&v=3', 
                 caption: 'Bespoke Agbada', 
                 category: 'Limited Edition' 
             },
             { 
                 id: 4, 
-                image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop&v=3', 
                 caption: 'Contemporary Aso Oke', 
                 category: 'Streetwear' 
             },
             { 
                 id: 5, 
-                image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop&v=3', 
                 caption: 'Elegant Evening Gown', 
                 category: 'Bespoke Wears' 
             },
             { 
                 id: 6, 
-                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop', 
+                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop&v=3', 
                 caption: 'Tailored Kaftan Set', 
                 category: 'Men\'s Bespoke' 
             }
         ];
 
         // Load from localStorage or use defaults
-        // Note: Using a versioned key to force new defaults if we update them later
-        const STORAGE_KEY = 'oyelekanGallery_v2';
+        // Changed key to 'v3' to force the browser to load the new images
+        const STORAGE_KEY = 'oyelekanGallery_v3';
         let galleryData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [...defaultGalleryData];
 
         // Save to localStorage
@@ -1493,4 +1493,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
