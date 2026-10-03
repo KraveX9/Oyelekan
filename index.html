@@ -936,31 +936,32 @@
         <div class="container">
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
+                    <!-- Updated with African Fashion Images -->
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop" alt="Signature Suit">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop" alt="Royal Lace Kaftan">
                         <div class="slide-info">
-                            <h3>The Signature Suit</h3>
+                            <h3>Royal Lace Kaftan</h3>
                             <p>Bespoke Tailoring</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop" alt="Urban Streetwear">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop" alt="Ankara Print Elegance">
                         <div class="slide-info">
-                            <h3>Urban Streetwear</h3>
+                            <h3>Ankara Print Elegance</h3>
                             <p>Unisex Collection</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop" alt="Evening Elegance">
+                        <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop" alt="Bespoke Agbada">
                         <div class="slide-info">
-                            <h3>Evening Elegance</h3>
+                            <h3>Bespoke Agbada</h3>
                             <p>Limited Edition</p>
                         </div>
                     </div>
                     <div class="slide-card">
-                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop" alt="Cargo Pants">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop" alt="Contemporary Aso Oke">
                         <div class="slide-info">
-                            <h3>Utility Cargo</h3>
+                            <h3>Contemporary Aso Oke</h3>
                             <p>Streetwear</p>
                         </div>
                     </div>
@@ -1093,7 +1094,7 @@
                 <form id="uploadForm" onsubmit="handleUpload(event)">
                     <div class="upload-form-group">
                         <label for="imgCaption">Image Caption</label>
-                        <input type="text" id="imgCaption" placeholder="e.g., The Signature Suit" required>
+                        <input type="text" id="imgCaption" placeholder="e.g., Royal Lace Kaftan" required>
                     </div>
                     
                     <div class="upload-form-group">
@@ -1134,20 +1135,55 @@
         /* =========================================
            DYNAMIC GALLERY DATA & LOCAL STORAGE
            ========================================= */
+        // Updated with beautifully styled African Attire
         const defaultGalleryData = [
-            { id: 1, image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1964&auto=format&fit=crop', caption: 'The Signature Suit', category: 'Bespoke Tailoring' },
-            { id: 2, image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974&auto=format&fit=crop', caption: 'Urban Streetwear', category: 'Unisex Collection' },
-            { id: 3, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1983&auto=format&fit=crop', caption: 'Evening Elegance', category: 'Limited Edition' },
-            { id: 4, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop', caption: 'Utility Cargo', category: 'Streetwear' }
+            { 
+                id: 1, 
+                image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1964&auto=format&fit=crop', 
+                caption: 'Royal Lace Kaftan', 
+                category: 'Bespoke Tailoring' 
+            },
+            { 
+                id: 2, 
+                image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop', 
+                caption: 'Ankara Print Elegance', 
+                category: 'Unisex Collection' 
+            },
+            { 
+                id: 3, 
+                image: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?q=80&w=1983&auto=format&fit=crop', 
+                caption: 'Bespoke Agbada', 
+                category: 'Limited Edition' 
+            },
+            { 
+                id: 4, 
+                image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1976&auto=format&fit=crop', 
+                caption: 'Contemporary Aso Oke', 
+                category: 'Streetwear' 
+            },
+            { 
+                id: 5, 
+                image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop', 
+                caption: 'Elegant Evening Gown', 
+                category: 'Bespoke Wears' 
+            },
+            { 
+                id: 6, 
+                image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop', 
+                caption: 'Tailored Kaftan Set', 
+                category: 'Men\'s Bespoke' 
+            }
         ];
 
         // Load from localStorage or use defaults
-        let galleryData = JSON.parse(localStorage.getItem('oyelekanGallery')) || [...defaultGalleryData];
+        // Note: Using a versioned key to force new defaults if we update them later
+        const STORAGE_KEY = 'oyelekanGallery_v2';
+        let galleryData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [...defaultGalleryData];
 
         // Save to localStorage
         function saveData() {
             try {
-                localStorage.setItem('oyelekanGallery', JSON.stringify(galleryData));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(galleryData));
             } catch (e) {
                 alert("Storage limit reached! Please delete some images or upload smaller files.");
             }
@@ -1330,7 +1366,7 @@
 
         // Handle Reset
         function resetGallery() {
-            if (confirm("Are you sure you want to reset the gallery to the default images? All custom uploads will be lost.")) {
+            if (confirm("Are you sure you want to reset the gallery to the default African attire images? All custom uploads will be lost.")) {
                 galleryData = [...defaultGalleryData];
                 saveData();
                 renderGallery();
@@ -1457,4 +1493,4 @@
         }
     </script>
 </body>
-                </html>
+    </html>
